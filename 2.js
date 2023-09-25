@@ -1,15 +1,25 @@
-function valor(){
-    var vl1 = parseInt(prompt('digite o primeiro valor'))
-    var vl2 = parseInt(prompt('digite o segundo valor'))
-    var vl3 = parseInt(prompt('digite o terceiro valor'))
-    var soma,sub;
+function encontrarViceCampeao() {
+  const pontuacoesInput = document.getElementById("pontuacoes").value;
+  const pontuacoes = pontuacoesInput.split(",").map(Number);
 
-    soma=vl1,vl2,vl3;
-    sub=vl1,vl2,vl3;
+  if (pontuacoes.length !== 3) {
+    alert("Digite exatamente três pontuações separadas por vírgula.");
+    return;
+  }
+  const [a, b, c] = pontuacoes;
+  const maxPontuacao = Math.max(a, b, c);
+  const minPontuacao = Math.min(a, b, c);
 
-    if ((dia >= '' && mes >= '') && (dia <= '' && mes <= '')) {
-}
-    else if ((dia >= '' && mes >= '') && (dia <= '' && mes <= '')) {
-}
+  let viceCampeaoPontuacao;
 
+  if (a !== maxPontuacao && a !== minPontuacao) {
+    viceCampeaoPontuacao = a;
+  } else if (b !== maxPontuacao && b !== minPontuacao) {
+    viceCampeaoPontuacao = b;
+  } else {
+    viceCampeaoPontuacao = c;
+  }
+
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = `A pontuação do vice-campeão é: ${viceCampeaoPontuacao}`;
 }
